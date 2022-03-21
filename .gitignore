@@ -1,5 +1,6 @@
 .DS_Store
 /*.box
+/.direnv
 /.vagrant
 /iso
 /output-virtualbox-iso
