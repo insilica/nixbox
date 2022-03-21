@@ -31,14 +31,17 @@
 
   # Packages for Vagrant
   environment.systemPackages = with pkgs; [
+    direnv
     findutils
+    git
     gnumake
     iputils
-    jq
     nettools
     netcat
     nfs-utils
+    podman-compose
     rsync
+    vim
   ];
 
   users.users.root = { password = "vagrant"; };
