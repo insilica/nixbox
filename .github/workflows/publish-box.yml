@@ -1,0 +1,29 @@
+name: Publish Vagrant Box
+
+on:  
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: macos-10.15
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get the version from the git tag
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v16
+
+      - name: Build box
+        run: |
+          nix-shell --run "packer build --only=virtualbox-iso nixos-x86_64.json"
+
+      - name: Publish box to Vagrant Cloud
+        run: |
+          nix-shell --run "vagrant cloud publish insilica/sysrev-dev $VERSION virtualbox nixos-21.05-virtualbox-x86_64.box"
+        env:
+          ATLAS_TOKEN: ${{ secrets.ATLAS_TOKEN }}
