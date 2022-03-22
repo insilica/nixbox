@@ -19,6 +19,8 @@
   # your boot until you press *.
   boot.initrd.checkJournalingFS = false;
 
+  networking.firewall.enable = false;
+
   # Services to enable:
 
   # Enable the OpenSSH daemon.
