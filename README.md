@@ -5,22 +5,16 @@ NixOS boxes for Vagrant
 package manager. This project builds [vagrant](http://vagrantup.com) .box
 images.
 
-Status
-------
+This is a custom fork that builds `insilica/sysrev-dev` boxes.
 
-stable
+Release
+-------
+
+Push a tag to GitHub with a name starting in `v`, e.g., `v21.05.15` for a build of NixOS 21.05. The [GitHub Actions runner](https://github.com/insilica/nixbox/actions) will automatically build and [publish a public box to Vagrant Cloud](https://app.vagrantup.com/insilica/boxes/sysrev-dev).
 
 Usage
 -----
-
-```
-vagrant init nixos/nixos-18.09-i686
-# or
-vagrant init nixos/nixos-18.09-x86_64
-```
-
-Also have a look at the accompanying nixos vagrant plugin:
-https://github.com/nix-community/vagrant-nixos-plugin
+See [the sysrev Vagrantfile](https://github.com/insilica/systematic_review/blob/dev/Vagrantfile).
 
 Building the images
 -------------------
