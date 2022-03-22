@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./hardware-builder.nix
       ./vagrant.nix
+      ./create-run-postgresql.nix
       ./custom-configuration.nix
     ];
 
@@ -24,7 +25,9 @@
   services.openssh.enable = true;
 
   # Enable DBus
-  services.dbus.enable    = true;
+  services.dbus.enable = true;
+
+  services.create-run-postgresql.enable = true;
 
   # Replace ntpd by timesyncd
   services.timesyncd.enable = true;

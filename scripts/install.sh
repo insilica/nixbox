@@ -28,6 +28,7 @@ curl -sf "$packer_http/vagrant-hostname.nix" > /mnt/etc/nixos/vagrant-hostname.n
 curl -sf "$packer_http/vagrant-network.nix" > /mnt/etc/nixos/vagrant-network.nix
 curl -sf "$packer_http/builders/$PACKER_BUILDER_TYPE.nix" > /mnt/etc/nixos/hardware-builder.nix
 curl -sf "$packer_http/configuration.nix" > /mnt/etc/nixos/configuration.nix
+curl -sf "$packer_http/create-run-postgresql.nix" > /mnt/etc/nixos/create-run-postgresql.nix
 curl -sf "$packer_http/custom-configuration.nix" > /mnt/etc/nixos/custom-configuration.nix
 
 ### Install ###
