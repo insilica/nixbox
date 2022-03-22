@@ -23,6 +23,6 @@ jobs:
 
       - name: Publish box to Vagrant Cloud
         run: |
-          vagrant cloud publish --force insilica/sysrev-dev ${{ env.GIT_TAG_NAME }} virtualbox nixos-21.05-virtualbox-x86_64.box
+          vagrant cloud publish --force --no-private --release insilica/sysrev-dev ${{ env.GIT_TAG_NAME }} virtualbox nixos-21.05-virtualbox-x86_64.box
         env:
           ATLAS_TOKEN: ${{ secrets.ATLAS_TOKEN }}
