@@ -21,6 +21,8 @@
     fi
   '';
 
+  networking.firewall.enable = false;
+
   nix = {
     autoOptimiseStore = true;
     extraOptions = ''
